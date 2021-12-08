@@ -67,7 +67,10 @@ fn main() {
     let min_x = crabs.iter().map(|v| *v).fold(max_x, std::cmp::min);
 
     let cost: Vec<_> = (min_x..(max_x+1))
-        .map(|x| crabs.iter().map(|cx| (cx - x).abs()).sum())
+        .map(|x| crabs.iter().map(|cx| {
+            let dx = (cx - x).abs();
+            (dx * (dx + 1))/2
+        }).sum())
         .collect();
 
     let max_cost = cost.iter().map(|v| *v).fold(0, std::cmp::max);

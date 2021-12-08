@@ -55,7 +55,7 @@ fn main() {
     }
 
     println!("{:?}", &fish);
-    for _ in 0..80 {
+    for _ in 0..256 {
         fish = simulate_day(&fish);
         println!("{:?} {}", &fish, fish.iter().sum::<u64>());
     }

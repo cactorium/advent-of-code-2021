@@ -33,14 +33,32 @@ path = "src/bingo.rs"
 name = "bingo2"
 path = "src/bingo2.rs"
 
-
 [[bin]]
 name = "vents"
 path = "src/vents.rs"
 
 [[bin]]
+name = "vents2"
+path = "src/vents2.rs"
+
+
+[[bin]]
 name = "lanternfish"
 path = "src/lanternfish.rs"
+
+[[bin]]
+name = "lanternfish2"
+path = "src/lanternfish2.rs"
+
+[[bin]]
+name = "crabs"
+path = "src/crabs.rs"
+
+[[bin]]
+name = "crabs2"
+path = "src/crabs2.rs"
+
+
 
 
 [dependencies]
