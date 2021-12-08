@@ -61,4 +61,5 @@ fn main() {
 
     println!("{} {}", epsilon, gamma);
     println!("{} {}", epsilon_val, gamma_val);
+    println!("{}", epsilon_val*gamma_val);
 }

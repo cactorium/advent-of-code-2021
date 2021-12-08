@@ -18,12 +18,21 @@ name = "dive"
 path = "src/dive.rs"
 
 [[bin]]
+name = "dive2"
+path = "src/dive2.rs"
+
+[[bin]]
 name = "binary-diagnostic"
 path = "src/binary-diagnostic.rs"
 
 [[bin]]
 name = "bingo"
 path = "src/bingo.rs"
+
+[[bin]]
+name = "bingo2"
+path = "src/bingo2.rs"
+
 
 [[bin]]
 name = "vents"
