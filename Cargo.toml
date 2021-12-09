@@ -66,5 +66,13 @@ path = "src/seven-segment.rs"
 name = "seven-segment2"
 path = "src/seven-segment2.rs"
 
+[[bin]]
+name = "basin"
+path = "src/basin.rs"
+
+[[bin]]
+name = "basin2"
+path = "src/basin2.rs"
+
 
 [dependencies]

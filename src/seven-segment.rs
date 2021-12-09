@@ -52,7 +52,7 @@ fn main() {
     }
 
     let mut active_count = 0;
-    for &(ref _, ref output) in &input {
+    for &(ref _patterns, ref output) in &input {
         active_count += output
             .iter()
             .map(|v| count_active(*v))
