@@ -58,7 +58,13 @@ path = "src/crabs.rs"
 name = "crabs2"
 path = "src/crabs2.rs"
 
+[[bin]]
+name = "seven-segment"
+path = "src/seven-segment.rs"
 
+[[bin]]
+name = "seven-segment2"
+path = "src/seven-segment2.rs"
 
 
 [dependencies]
