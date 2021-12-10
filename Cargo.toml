@@ -74,5 +74,12 @@ path = "src/basin.rs"
 name = "basin2"
 path = "src/basin2.rs"
 
+[[bin]]
+name = "syntax"
+path = "src/syntax.rs"
+
+[[bin]]
+name = "syntax2"
+path = "src/syntax2.rs"
 
 [dependencies]
