@@ -26,6 +26,10 @@ name = "binary-diagnostic"
 path = "src/binary-diagnostic.rs"
 
 [[bin]]
+name = "binary-diagnostic2"
+path = "src/binary-diagnostic2.rs"
+
+[[bin]]
 name = "bingo"
 path = "src/bingo.rs"
 
