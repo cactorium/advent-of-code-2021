@@ -86,4 +86,14 @@ path = "src/syntax.rs"
 name = "syntax2"
 path = "src/syntax2.rs"
 
+[[bin]]
+name = "dumbo"
+path = "src/dumbo.rs"
+
+[[bin]]
+name = "dumbo2"
+path = "src/dumbo2.rs"
+
+
+
 [dependencies]
