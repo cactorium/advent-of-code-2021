@@ -94,6 +94,13 @@ path = "src/dumbo.rs"
 name = "dumbo2"
 path = "src/dumbo2.rs"
 
+[[bin]]
+name = "passage"
+path = "src/passage.rs"
+
+[[bin]]
+name = "passage2"
+path = "src/passage2.rs"
 
 
 [dependencies]
