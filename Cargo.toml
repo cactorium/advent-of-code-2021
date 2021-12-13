@@ -102,5 +102,13 @@ path = "src/passage.rs"
 name = "passage2"
 path = "src/passage2.rs"
 
+[[bin]]
+name = "origami"
+path = "src/origami.rs"
+
+[[bin]]
+name = "origami2"
+path = "src/origami2.rs"
+
 
 [dependencies]
