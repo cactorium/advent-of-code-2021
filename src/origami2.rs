@@ -71,10 +71,10 @@ fn main() {
         //println!("{:?}", &dots);
         //println!("{:?}", dots.len());
     }
-    let min_x = dots.iter().map(|&(x, y)| x).min().unwrap();
-    let max_x = dots.iter().map(|&(x, y)| x).max().unwrap();
-    let min_y = dots.iter().map(|&(x, y)| y).min().unwrap();
-    let max_y = dots.iter().map(|&(x, y)| y).max().unwrap();
+    let min_x = dots.iter().map(|&(x, _)| x).min().unwrap();
+    let max_x = dots.iter().map(|&(x, _)| x).max().unwrap();
+    let min_y = dots.iter().map(|&(_, y)| y).min().unwrap();
+    let max_y = dots.iter().map(|&(_, y)| y).max().unwrap();
 
     for y in min_y..(max_y + 1) {
         for x in min_x..(max_x + 1) {

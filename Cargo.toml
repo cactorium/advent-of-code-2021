@@ -110,5 +110,12 @@ path = "src/origami.rs"
 name = "origami2"
 path = "src/origami2.rs"
 
+[[bin]]
+name = "polymer"
+path = "src/polymer.rs"
+
+[[bin]]
+name = "polymer2"
+path = "src/polymer2.rs"
 
 [dependencies]
