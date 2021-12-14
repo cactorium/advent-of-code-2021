@@ -58,14 +58,19 @@ fn main() {
     for _ in 0..40 {
         let mut new_polymer: HashMap<(u8, Option<u8>), usize> = HashMap::new();
         for ((a, maybe_b), count) in polymer.iter() {
+            //so we're looking for a rule that matches AB
             match new_rules.get(&(*a, *maybe_b)) {
                 Some(c) => {
+                    // if there is one then it'll put a C in between A and B
+                    // making AC and CB
                     let entry = new_polymer.entry((*a, Some(*c))).or_insert(0);
                     *entry += *count;
                     let entry2 = new_polymer.entry((*c, *maybe_b)).or_insert(0);
                     *entry2 += *count;
                 },
                 None => {
+                    // else just copy the population of AB into the new
+                    // hashmap
                     let entry = new_polymer.entry((*a, *maybe_b)).or_insert(0);
                     *entry += *count;
                 }
