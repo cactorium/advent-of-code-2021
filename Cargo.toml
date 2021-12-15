@@ -118,4 +118,12 @@ path = "src/polymer.rs"
 name = "polymer2"
 path = "src/polymer2.rs"
 
+[[bin]]
+name = "chiton"
+path = "src/chiton.rs"
+
+[[bin]]
+name = "chiton2"
+path = "src/chiton2.rs"
+
 [dependencies]
