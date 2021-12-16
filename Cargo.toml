@@ -126,4 +126,12 @@ path = "src/chiton.rs"
 name = "chiton2"
 path = "src/chiton2.rs"
 
+[[bin]]
+name = "decoder"
+path = "src/decoder.rs"
+
+[[bin]]
+name = "decoder2"
+path = "src/decoder2.rs"
+
 [dependencies]
