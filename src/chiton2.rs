@@ -1,4 +1,5 @@
 use std::cmp::Ordering;
+use std::ops::Index;
 
 use std::io::BufRead;
 use std::collections::BinaryHeap;
@@ -40,10 +41,50 @@ impl <'a, F> Ord for Path<'a, F> where F: Fn(usize, usize) -> usize {
     }
 }
 
+struct Score {
+    vals: Vec<usize>,
+    dims: (usize, usize)
+}
+
+impl Score {
+    const SENTINEL: usize = 1000000;
+    fn new(dims: (usize, usize)) -> Score {
+        Score {
+            dims: dims,
+            vals: {
+                let mut v = Vec::new();
+                v.resize(dims.0*dims.1, Score::SENTINEL);
+                v
+            }
+        }
+    }
+
+    fn insert(&mut self, (x, y): (usize, usize), v: usize) {
+        self.vals[y*self.dims.0 + x] = v;
+    }
+
+    fn get(&self, (x, y): &(usize, usize)) -> Option<&usize> {
+        let idx = (*y)*(self.dims.0) + *x;
+        match self.vals[idx] {
+            Score::SENTINEL => None,
+            _ => Some(&self.vals[idx]),
+        }
+    }
+}
+
+impl Index<&(usize, usize)> for Score {
+    type Output = usize;
+
+    fn index(&self, p: &(usize, usize)) -> &usize {
+        &self.get(p).unwrap()
+    }
+}
+
 fn astar(start: (usize, usize), end: (usize, usize), risk: &[Vec<usize>]) -> Option<(Vec<(usize, usize)>, usize)>{
     let mut came_from: HashMap<(usize, usize), (usize, usize)> = HashMap::new();
-    let mut g_score: HashMap<(usize, usize), usize> = HashMap::new();
-    let mut f_score: HashMap<(usize, usize), usize> = HashMap::new();
+
+    //let mut g_score: HashMap<(usize, usize), usize> = HashMap::new();
+    let mut g_score = Score::new((risk[0].len(), risk.len()));
 
     let manchester = |(px, py): (usize, usize), (qx, qy): (usize, usize)| -> usize {
         let dx = ((px as isize) - (qx as isize)).abs();
@@ -62,7 +103,6 @@ fn astar(start: (usize, usize), end: (usize, usize), risk: &[Vec<usize>]) -> Opt
         f: &calc_cost,
     });
     g_score.insert(start, 0);
-    f_score.insert(start, manchester(start, end));
 
     while paths.len() > 0 {
         let cur = paths.pop().unwrap();
@@ -153,9 +193,28 @@ fn main() {
                       .collect());
         }
     }
+    /*
     for row in &risk {
         println!("{:?}", &row);
     }
+    */
 
-    println!("{:?}", astar((0, 0), (risk.len() - 1, risk[risk.len()-1].len() - 1), &risk));
+    let (path, total) = astar((0, 0), (risk.len() - 1, risk[risk.len()-1].len() - 1), &risk)
+        .unwrap();
+
+    /*
+    for (y, row) in risk.iter().enumerate() {
+        for (x, v) in row.iter().enumerate() {
+            let in_path = path.iter().any(|p| *p == (x, y));
+            if in_path {
+                print!(" ");
+            } else {
+                print!("{}", *v);
+            }
+        }
+        println!("");
+    }
+    */
+    println!("{:?} {}", &path, total);
+
 }
