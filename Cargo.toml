@@ -143,6 +143,14 @@ name = "trick-shot2"
 path = "src/trick-shot2.rs"
 
 [[bin]]
+name = "snailfish"
+path = "src/snailfish.rs"
+
+[[bin]]
+name = "snailfish2"
+path = "src/snailfish2.rs"
+
+[[bin]]
 name = "scanner"
 path = "src/scanner.rs"
 
