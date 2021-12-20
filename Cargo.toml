@@ -134,4 +134,17 @@ path = "src/decoder.rs"
 name = "decoder2"
 path = "src/decoder2.rs"
 
+[[bin]]
+name = "trick-shot"
+path = "src/trick-shot.rs"
+
+[[bin]]
+name = "trick-shot2"
+path = "src/trick-shot2.rs"
+
+[[bin]]
+name = "scanner"
+path = "src/scanner.rs"
+
+
 [dependencies]
