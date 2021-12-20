@@ -146,5 +146,8 @@ path = "src/trick-shot2.rs"
 name = "scanner"
 path = "src/scanner.rs"
 
+[[bin]]
+name = "scanner2"
+path = "src/scanner2.rs"
 
 [dependencies]
