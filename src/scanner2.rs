@@ -403,7 +403,7 @@ fn main() {
     
     let mut points: Vec<V> = Vec::new();
     // calculate where the origin is for each scanner
-    for (i, tp) in transform_paths.iter().enumerate() {
+    for tp in transform_paths.iter() {
         let mut pt = V(0, 0, 0);
         for t in tp.iter() {
             pt = match *t {
