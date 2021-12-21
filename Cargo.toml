@@ -166,6 +166,14 @@ path = "src/trench.rs"
 name = "trench2"
 path = "src/trench2.rs"
 
+[[bin]]
+name = "dirac"
+path = "src/dirac.rs"
+
+[[bin]]
+name = "dirac2"
+path = "src/dirac2.rs"
+
 
 
 [dependencies]
